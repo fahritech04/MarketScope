@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from typing import Any
+from urllib.parse import unquote, urlparse
 
 import pandas as pd
 
@@ -37,6 +38,24 @@ def _normalize_price(row: pd.Series) -> tuple[float | None, float | None]:
     return min(values), max(values)
 
 
+def _fallback_name_from_metadata(meta: Any) -> str | None:
+    if not isinstance(meta, dict):
+        return None
+    url = meta.get("url")
+    if not isinstance(url, str) or not url.strip():
+        return None
+    try:
+        parsed = urlparse(url.strip())
+        slug = unquote(parsed.path.strip("/").split("/")[-1]).strip()
+        if slug:
+            candidate = re.sub(r"[-_]+", " ", slug)
+            candidate = re.sub(r"\s+", " ", candidate).strip()
+            return candidate or parsed.netloc
+        return parsed.netloc or None
+    except Exception:
+        return None
+
+
 def clean_scraped_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     if not items:
         return []
@@ -45,6 +64,12 @@ def clean_scraped_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for col in ("name", "description", "address", "price_text", "raw_text"):
         if col in df.columns:
             df[col] = df[col].apply(_normalize_text)
+
+    if "name" in df.columns and "metadata" in df.columns:
+        df["name"] = df.apply(
+            lambda row: row["name"] if row.get("name") else _fallback_name_from_metadata(row.get("metadata")),
+            axis=1,
+        )
 
     if "name" in df.columns:
         df = df[df["name"].notna()]

@@ -6,11 +6,10 @@ interface StatCardProps {
 
 export function StatCard({ label, value, hint }: StatCardProps) {
   return (
-    <div className="glass-panel rounded-2xl p-4">
-      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{label}</p>
+    <div className="surface-card p-4">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-muted">{label}</p>
       <p className="mt-2 text-2xl font-bold text-slate-900">{value}</p>
-      {hint ? <p className="mt-1 text-xs text-slate-500">{hint}</p> : null}
+      {hint ? <p className="mt-1 text-xs text-muted">{hint}</p> : null}
     </div>
   );
 }
-

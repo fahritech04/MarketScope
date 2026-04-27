@@ -39,10 +39,6 @@ MarketScope_AI/
           prompts/insight_prompt.txt
           prompts/query_planner_prompt.txt
         utils/manual_scrape.py
-      tests/
-        workers/test_domain_adapter.py
-        workers/test_source_discovery.py
-        services/test_pipeline_e2e.py
       requirements.txt
       scrapy_project/
         scrapy.cfg
@@ -208,22 +204,11 @@ python -m app.utils.manual_scrape --topic "topik analisis bebas"
 - Cek `robots.txt` sebelum scraping halaman sumber.
 - Batasi jumlah sumber per analisis untuk mengurangi beban server target.
 
-## 12. Menjalankan Test Otomatis
-```bash
-cd apps/api
-.venv\Scripts\activate
-pytest
-```
-
-Test yang tersedia:
-- Unit test domain-adapter berbasis profile dinamis.
-- Unit test relevansi source discovery.
-- Unit test fallback query planner.
-- E2E pipeline mock (tanpa ketergantungan jaringan eksternal) untuk validasi status `completed`.
-
-## 14. High-Volume Crawl (1000+)
+## 12. High-Volume Crawl (1000+)
 - Sistem sekarang dituning untuk target `1000` source dan `1000` item per analisis.
 - Discovery diperluas lewat pagination query dan limit request yang lebih besar.
+- Relevansi discovery dipagari dengan topic-signal filter (query + URL/title harus tetap terkait topik input) untuk menekan source noise lintas topik.
+- Pipeline scraping menerapkan terminal status handling (`completed`/`failed`/`skipped`) agar source tidak tertinggal di status proses.
 - Tetap berlaku batas eksternal: robots.txt, timeout jaringan, anti-bot website publik, dan kualitas index search engine.
 
 ## 13. Catatan MVP

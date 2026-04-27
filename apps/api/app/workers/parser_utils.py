@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from typing import Any
+from urllib.parse import unquote, urlparse
 
 from bs4 import BeautifulSoup
 
@@ -68,6 +69,19 @@ def extract_address(raw_text: str) -> str | None:
     return None
 
 
+def _fallback_name_from_url(url: str) -> str | None:
+    try:
+        parsed = urlparse(url)
+        slug = unquote(parsed.path.strip("/").split("/")[-1]).strip()
+        if slug:
+            candidate = re.sub(r"[-_]+", " ", slug)
+            candidate = re.sub(r"\s+", " ", candidate).strip()
+            return candidate or parsed.netloc
+        return parsed.netloc or None
+    except Exception:
+        return None
+
+
 def parse_html_content(url: str, html: str) -> dict[str, Any]:
     soup = BeautifulSoup(html, "html.parser")
 
@@ -80,6 +94,7 @@ def parse_html_content(url: str, html: str) -> dict[str, Any]:
         (h1.get_text(strip=True) if h1 else None)
         or (og_title.get("content", "").strip() if og_title else None)
         or title
+        or _fallback_name_from_url(url)
     )
 
     text_nodes = soup.select("p, li, h2, h3, article, section, main")

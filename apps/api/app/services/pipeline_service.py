@@ -179,6 +179,10 @@ class PipelineService:
                     self.repository.update_source_status(source_id, "failed")
                     continue
 
+                if len(scraped_payload) >= max_items:
+                    self.repository.update_source_status(source_id, "skipped")
+                    continue
+
                 self.repository.update_source_status(source_id, "completed")
                 scraped_payload.append(
                     self._build_scraped_item_payload(
@@ -187,9 +191,6 @@ class PipelineService:
                         result=result,
                     )
                 )
-                if len(scraped_payload) >= max_items:
-                    break
-
             # Second pass fallback: paralel untuk URL yang gagal di Scrapy.
             if len(scraped_payload) < max_items and fallback_candidates and not high_volume_mode:
                 remaining_quota = max_items - len(scraped_payload)
@@ -221,11 +222,18 @@ class PipelineService:
                             result = None
 
                         if not result:
-                            self.repository.update_source_status(source_id, "failed")
+                            if len(scraped_payload) >= max_items:
+                                self.repository.update_source_status(source_id, "skipped")
+                            else:
+                                self.repository.update_source_status(source_id, "failed")
                             continue
 
                         if isinstance(result.get("metadata"), dict):
                             result["metadata"]["engine"] = "fallback_parallel"
+                        if len(scraped_payload) >= max_items:
+                            self.repository.update_source_status(source_id, "skipped")
+                            continue
+
                         self.repository.update_source_status(source_id, "completed")
                         scraped_payload.append(
                             self._build_scraped_item_payload(
@@ -234,17 +242,16 @@ class PipelineService:
                                 result=result,
                             )
                         )
-                        if len(scraped_payload) >= max_items:
-                            break
 
             # Final fallback high-volume: tetap simpan item minimal dari source discovery
             # agar target volume data bisa tercapai walau fetch halaman gagal.
             if len(scraped_payload) < max_items and fallback_candidates:
                 existing_source_ids = {item.get("source_id") for item in scraped_payload}
                 for source in fallback_candidates:
-                    if len(scraped_payload) >= max_items:
-                        break
                     if source["id"] in existing_source_ids:
+                        continue
+                    if len(scraped_payload) >= max_items:
+                        self.repository.update_source_status(source["id"], "skipped")
                         continue
                     self.repository.update_source_status(source["id"], "completed")
                     scraped_payload.append(

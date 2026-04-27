@@ -8,21 +8,11 @@
   - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 6.3s
+ ✓ Ready in 3.5s
  ○ Compiling / ...
- ✓ Compiled / in 6.3s (500 modules)
- ✓ Compiled in 964ms (257 modules)
- GET / 200 in 307ms
- GET / 200 in 55ms
- GET / 200 in 74ms
- ○ Compiling /analisis/baru ...
- ✓ Compiled /analisis/baru in 875ms (500 modules)
- ○ Compiling /analisis/[id] ...
- ✓ Compiled /analisis/[id] in 1562ms (1560 modules)
- ✓ Compiled in 1024ms (1574 modules)
- ✓ Compiled in 847ms (1574 modules)
- ✓ Compiled in 1610ms (1583 modules)
- GET /analisis/0fe2c49b-01a8-4fc1-b0ef-06419577087e 200 in 373ms
+ ✓ Compiled / in 2.6s (508 modules)
+ GET / 200 in 3283ms
+ ✓ Compiled in 986ms (262 modules)
+ GET / 200 in 53ms
  ○ Compiling /analisis ...
- ✓ Compiled /analisis in 687ms (1568 modules)
- GET / 200 in 143ms
+ ✓ Compiled /analisis in 543ms (506 modules)

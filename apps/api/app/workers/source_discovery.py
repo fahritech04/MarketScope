@@ -17,8 +17,10 @@ from app.workers.domain_adapter import (
     build_search_queries,
     infer_source_type,
     is_preferred_domain,
+    normalize_text,
     score_candidate,
     select_adapter,
+    tokenize,
 )
 from app.workers.query_planner import plan_query_bundle
 
@@ -52,6 +54,36 @@ HARD_BLOCKED_DOMAINS = {
     "www.bing.com",
     "bing.com",
     "search.brave.com",
+}
+
+GENERIC_BLOCKED_URL_TOKENS = {
+    "login",
+    "logout",
+    "signup",
+    "sign-up",
+    "register",
+    "createaccount",
+    "create-account",
+    "feedback",
+    "privacy",
+    "terms",
+    "policy",
+    "unsubscribe",
+    "wp-login",
+}
+
+GENERIC_QUERY_NOISE_TERMS = {
+    "harga",
+    "review",
+    "rekomendasi",
+    "kompetitor",
+    "daftar",
+    "usaha",
+    "alamat",
+    "rating",
+    "terdekat",
+    "marketplace",
+    "directory",
 }
 
 
@@ -106,6 +138,9 @@ def _is_supported_url(url: str | None, allow_all_domains: bool = True) -> bool:
         return False
     domain = parsed.netloc.lower()
     if domain in HARD_BLOCKED_DOMAINS:
+        return False
+    utility_haystack = normalize_text(f"{parsed.path} {parsed.query}")
+    if any(token in utility_haystack for token in GENERIC_BLOCKED_URL_TOKENS):
         return False
     # allow_all_domains disediakan untuk kompatibilitas config.
     # Tidak ada hardcoded noisy-domain blacklist agar full dinamis.
@@ -163,6 +198,52 @@ def _provider_offsets(provider: dict[str, Any], pages: int) -> list[int]:
     return [start + (idx * step) for idx in range(max(1, pages))]
 
 
+def _build_topic_terms(topic: str, location_text: str | None, category: str | None) -> list[str]:
+    topic_tokens = tokenize(topic)
+    category_tokens = tokenize(category or "")
+    location_tokens = set(tokenize(location_text or ""))
+
+    terms: list[str] = []
+    for token in [*topic_tokens, *category_tokens]:
+        if token in location_tokens or token in GENERIC_QUERY_NOISE_TERMS:
+            continue
+        if token not in terms:
+            terms.append(token)
+
+    if not terms:
+        for token in topic_tokens:
+            if token not in terms:
+                terms.append(token)
+    return terms[:12]
+
+
+def _match_count(haystack: str, terms: tuple[str, ...] | list[str]) -> int:
+    normalized = normalize_text(haystack)
+    return sum(1 for term in terms if term and term in normalized)
+
+
+def _query_is_topical(query: str, topic_terms: list[str]) -> bool:
+    if not topic_terms:
+        return True
+    return _match_count(query, topic_terms) > 0
+
+
+def _candidate_has_topic_signal(
+    *,
+    url: str,
+    title: str,
+    topic_terms: list[str],
+    required_terms: tuple[str, ...],
+    min_topic_matches: int = 1,
+) -> bool:
+    haystack = f"{title} {url}"
+    if topic_terms and _match_count(haystack, topic_terms) < min_topic_matches:
+        return False
+    if required_terms and _match_count(haystack, required_terms) <= 0:
+        return False
+    return True
+
+
 def discover_sources(
     keywords: list[str],
     max_results_per_keyword: int = 5,
@@ -214,16 +295,25 @@ def discover_sources(
         blocked_terms=planned_bundle.get("blocked_terms"),
         preferred_domains=planned_bundle.get("preferred_domains"),
     )
+    topic_terms = _build_topic_terms(topic_text, location_text, category)
+    topical_queries = [query for query in search_queries if _query_is_topical(query, topic_terms)]
+    if topical_queries:
+        search_queries = topical_queries
+    relevance_required_terms = (
+        tuple(adapter.required_terms)
+        if adapter.required_terms
+        else tuple(topic_terms[: max(1, min(3, len(topic_terms)))])
+    )
 
     location_aliases = build_location_aliases(location_text)
     require_location = bool(location_aliases)
+    effective_min_score = max(min_score, 10 if topic_terms else min_score)
     if target_total_results and target_total_results > 0:
         max_total_results = target_total_results
     else:
         max_total_results = max(max_results_per_keyword, max_results_per_keyword * max(1, len(keywords)))
 
     candidates: dict[str, dict[str, Any]] = {}
-    relaxed_candidates: dict[str, dict[str, Any]] = {}
     domain_counts: dict[str, int] = {}
     request_count = 0
 
@@ -273,9 +363,19 @@ def discover_sources(
                         )
                         preferred_domain = is_preferred_domain(real_url, adapter)
 
-                        if score < min_score:
+                        if score < effective_min_score:
                             continue
                         if require_location and conflicting_location:
+                            continue
+                        if require_location and not location_match:
+                            continue
+                        if not _candidate_has_topic_signal(
+                            url=real_url,
+                            title=title_text,
+                            topic_terms=topic_terms,
+                            required_terms=relevance_required_terms,
+                            min_topic_matches=1,
+                        ):
                             continue
 
                         source_type = infer_source_type(real_url, adapter)
@@ -287,13 +387,6 @@ def discover_sources(
                             "preferred_domain": preferred_domain,
                             "location_match": location_match,
                         }
-                        if require_location and not location_match and score < 82:
-                            relaxed_item = {**item, "score": score - 20}
-                            existing = relaxed_candidates.get(real_url)
-                            if not existing or relaxed_item["score"] > existing["score"]:
-                                relaxed_candidates[real_url] = relaxed_item
-                            continue
-
                         existing = candidates.get(real_url)
                         if not existing or item["score"] > existing["score"]:
                             candidates[real_url] = item
@@ -316,13 +409,13 @@ def discover_sources(
         seed_candidates = seed_candidates[: min(250, len(seed_candidates))]
 
         # BFS ringan depth<=1 untuk memperluas URL dari seed awal.
-        queue: deque[tuple[str, int, int]] = deque()
+        queue: deque[tuple[str, int, int, str]] = deque()
         visited_pages: set[str] = set()
         for seed in seed_candidates:
-            queue.append((seed["url"], 0, seed["score"]))
+            queue.append((seed["url"], 0, seed["score"], _domain_key(seed["url"])))
 
         while queue and request_count < max_requests:
-            page_url, depth, parent_score = queue.popleft()
+            page_url, depth, parent_score, seed_domain = queue.popleft()
             if page_url in visited_pages:
                 continue
             visited_pages.add(page_url)
@@ -347,6 +440,9 @@ def discover_sources(
                     continue
                 if not expanded_url:
                     continue
+                expanded_domain = _domain_key(expanded_url)
+                if expanded_domain != seed_domain and not is_preferred_domain(expanded_url, adapter):
+                    continue
 
                 title_text = anchor.get_text(strip=True) or expanded_url
                 score, location_match, conflicting_location = score_candidate(
@@ -358,6 +454,16 @@ def discover_sources(
                     location_aliases=location_aliases,
                 )
                 if require_location and conflicting_location:
+                    continue
+                if require_location and not location_match:
+                    continue
+                if not _candidate_has_topic_signal(
+                    url=expanded_url,
+                    title=title_text,
+                    topic_terms=topic_terms,
+                    required_terms=relevance_required_terms,
+                    min_topic_matches=1,
+                ):
                     continue
 
                 source_type = infer_source_type(expanded_url, adapter)
@@ -376,7 +482,7 @@ def discover_sources(
                     candidates[expanded_url] = item
 
                 if depth < 1 and len(queue) < max_total_results * 3:
-                    queue.append((expanded_url, depth + 1, relaxed_score))
+                    queue.append((expanded_url, depth + 1, relaxed_score, seed_domain))
 
                 if len(candidates) >= max_total_results * 5:
                     break
@@ -405,29 +511,5 @@ def discover_sources(
         )
         if len(discovered) >= max_total_results:
             break
-
-    if len(discovered) < max_total_results and relaxed_candidates:
-        relaxed_ranked = sorted(
-            relaxed_candidates.values(),
-            key=lambda item: (item["score"], item["preferred_domain"]),
-            reverse=True,
-        )
-        existing_urls = {item["url"] for item in discovered}
-        for item in relaxed_ranked:
-            if item["url"] in existing_urls:
-                continue
-            domain = _domain_key(item["url"])
-            if domain_cap > 0 and domain_counts.get(domain, 0) >= max(1, domain_cap // 2):
-                continue
-            domain_counts[domain] = domain_counts.get(domain, 0) + 1
-            discovered.append(
-                {
-                    "url": item["url"],
-                    "title": item["title"],
-                    "source_type": item["source_type"],
-                }
-            )
-            if len(discovered) >= max_total_results:
-                break
 
     return discovered
