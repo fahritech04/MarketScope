@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from typing import Any
 
 from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException, status
 
@@ -19,6 +20,20 @@ from app.services.pipeline_service import PipelineService
 router = APIRouter(prefix="/analyses", tags=["analyses"])
 
 
+def _sanitize_optional_text(value: str | None) -> str | None:
+    return value.strip() if value else None
+
+
+def _require_analysis(
+    repository: AnalysisRepository | LocalAnalysisRepository,
+    analysis_id: str,
+) -> dict[str, Any]:
+    analysis = repository.get_analysis(analysis_id)
+    if not analysis:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analisis tidak ditemukan.")
+    return analysis
+
+
 @router.post("", response_model=AnalysisResponse, status_code=status.HTTP_201_CREATED)
 def create_analysis(
     payload: AnalysisCreate, repository: AnalysisRepository | LocalAnalysisRepository = Depends(get_repository)
@@ -26,8 +41,8 @@ def create_analysis(
     created = repository.create_analysis(
         {
             "topic": payload.topic.strip(),
-            "location": payload.location.strip() if payload.location else None,
-            "category": payload.category.strip() if payload.category else None,
+            "location": _sanitize_optional_text(payload.location),
+            "category": _sanitize_optional_text(payload.category),
             "status": "pending",
             "created_at": datetime.utcnow().isoformat(),
             "updated_at": datetime.utcnow().isoformat(),
@@ -57,9 +72,7 @@ def list_analyses(
 def get_analysis(
     analysis_id: str, repository: AnalysisRepository | LocalAnalysisRepository = Depends(get_repository)
 ) -> AnalysisResponse:
-    analysis = repository.get_analysis(analysis_id)
-    if not analysis:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analisis tidak ditemukan.")
+    analysis = _require_analysis(repository, analysis_id)
     return AnalysisResponse(
         **analysis,
         sources_count=repository.count_sources(analysis_id),
@@ -73,9 +86,7 @@ def run_analysis(
     background_tasks: BackgroundTasks,
     repository: AnalysisRepository | LocalAnalysisRepository = Depends(get_repository),
 ) -> dict[str, str]:
-    analysis = repository.get_analysis(analysis_id)
-    if not analysis:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analisis tidak ditemukan.")
+    analysis = _require_analysis(repository, analysis_id)
 
     if analysis["status"] in {"crawling", "scraping", "analyzing"}:
         return {"message": "Analisis sedang diproses."}
@@ -90,8 +101,7 @@ def run_analysis(
 def get_sources(
     analysis_id: str, repository: AnalysisRepository | LocalAnalysisRepository = Depends(get_repository)
 ) -> list[SourceResponse]:
-    if not repository.get_analysis(analysis_id):
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analisis tidak ditemukan.")
+    _require_analysis(repository, analysis_id)
     return [SourceResponse(**item) for item in repository.list_sources(analysis_id)]
 
 
@@ -99,8 +109,7 @@ def get_sources(
 def get_items(
     analysis_id: str, repository: AnalysisRepository | LocalAnalysisRepository = Depends(get_repository)
 ) -> list[ScrapedItemResponse]:
-    if not repository.get_analysis(analysis_id):
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analisis tidak ditemukan.")
+    _require_analysis(repository, analysis_id)
     return [ScrapedItemResponse(**item) for item in repository.list_scraped_items(analysis_id)]
 
 
@@ -108,8 +117,7 @@ def get_items(
 def get_insight(
     analysis_id: str, repository: AnalysisRepository | LocalAnalysisRepository = Depends(get_repository)
 ) -> InsightResponse:
-    if not repository.get_analysis(analysis_id):
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Analisis tidak ditemukan.")
+    _require_analysis(repository, analysis_id)
 
     insight = repository.get_insight(analysis_id)
     if not insight:

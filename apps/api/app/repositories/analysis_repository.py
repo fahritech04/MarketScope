@@ -1,23 +1,14 @@
-from datetime import datetime
-import math
 from typing import Any
 import time
 
 from supabase import Client
 
+from app.utils.data_utils import sanitize_recursive, utc_now_iso
+
 
 class AnalysisRepository:
     def __init__(self, client: Client):
         self.client = client
-
-    def _sanitize(self, value: Any) -> Any:
-        if isinstance(value, float) and math.isnan(value):
-            return None
-        if isinstance(value, dict):
-            return {key: self._sanitize(val) for key, val in value.items()}
-        if isinstance(value, list):
-            return [self._sanitize(item) for item in value]
-        return value
 
     def _run(self, query_factory, retries: int = 3):
         last_error: Exception | None = None
@@ -37,7 +28,7 @@ class AnalysisRepository:
         raise RuntimeError("Unknown database execution error.")
 
     def create_analysis(self, payload: dict[str, Any]) -> dict[str, Any]:
-        payload = self._sanitize(payload)
+        payload = sanitize_recursive(payload)
         response = self._run(lambda: self.client.table("analyses").insert(payload))
         return response.data[0]
 
@@ -81,14 +72,14 @@ class AnalysisRepository:
     def update_analysis_status(self, analysis_id: str, status: str) -> None:
         self._run(
             lambda: self.client.table("analyses")
-            .update({"status": status, "updated_at": datetime.utcnow().isoformat()})
+            .update({"status": status, "updated_at": utc_now_iso()})
             .eq("id", analysis_id)
         )
 
     def create_sources(self, payload: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not payload:
             return []
-        payload = self._sanitize(payload)
+        payload = sanitize_recursive(payload)
         response = self._run(lambda: self.client.table("sources").insert(payload))
         return response.data or []
 
@@ -112,7 +103,7 @@ class AnalysisRepository:
     def create_scraped_items(self, payload: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if not payload:
             return []
-        payload = self._sanitize(payload)
+        payload = sanitize_recursive(payload)
         response = self._run(lambda: self.client.table("scraped_items").insert(payload))
         return response.data or []
 
@@ -128,11 +119,11 @@ class AnalysisRepository:
     def replace_scraped_items(self, analysis_id: str, items: list[dict[str, Any]]) -> None:
         self._run(lambda: self.client.table("scraped_items").delete().eq("analysis_id", analysis_id))
         if items:
-            items = self._sanitize(items)
+            items = sanitize_recursive(items)
             self._run(lambda: self.client.table("scraped_items").insert(items))
 
     def upsert_insight(self, payload: dict[str, Any]) -> dict[str, Any]:
-        payload = self._sanitize(payload)
+        payload = sanitize_recursive(payload)
         response = self._run(lambda: self.client.table("insights").upsert(payload, on_conflict="analysis_id"))
         return response.data[0]
 

@@ -20,6 +20,75 @@ class PipelineService:
         self.repository = repository
         self.settings = get_settings()
 
+    @staticmethod
+    def _build_scraped_item_payload(
+        *,
+        analysis_id: str,
+        source_id: str | None,
+        result: dict[str, Any],
+    ) -> dict[str, Any]:
+        return {
+            "analysis_id": analysis_id,
+            "source_id": source_id,
+            "name": result.get("name"),
+            "description": result.get("description"),
+            "address": result.get("address"),
+            "price_text": result.get("price_text"),
+            "price_min": result.get("price_min"),
+            "price_max": result.get("price_max"),
+            "rating": result.get("rating"),
+            "review_count": result.get("review_count"),
+            "raw_text": result.get("raw_text"),
+            "metadata": result.get("metadata", {}),
+        }
+
+    @staticmethod
+    def _build_discovery_fallback_item(
+        *,
+        analysis_id: str,
+        source: dict[str, Any],
+    ) -> dict[str, Any]:
+        return {
+            "analysis_id": analysis_id,
+            "source_id": source["id"],
+            "name": source.get("title") or source.get("url"),
+            "description": "Fallback item dari discovery source ketika scraping penuh tidak berhasil.",
+            "address": None,
+            "price_text": None,
+            "price_min": None,
+            "price_max": None,
+            "rating": None,
+            "review_count": None,
+            "raw_text": source.get("title"),
+            "metadata": {
+                "url": source.get("url"),
+                "engine": "source_discovery_fallback",
+                "source_type": source.get("source_type"),
+            },
+        }
+
+    @staticmethod
+    def _build_clean_item_payload(
+        *,
+        analysis_id: str,
+        item: dict[str, Any],
+    ) -> dict[str, Any]:
+        return {
+            "analysis_id": analysis_id,
+            "source_id": item.get("source_id"),
+            "name": item.get("name"),
+            "description": item.get("description"),
+            "address": item.get("address"),
+            "price_text": item.get("price_text"),
+            "price_min": item.get("price_min"),
+            "price_max": item.get("price_max"),
+            "rating": item.get("rating"),
+            "review_count": item.get("review_count"),
+            "raw_text": item.get("raw_text"),
+            "metadata": item.get("metadata", {}),
+            "created_at": item.get("created_at", datetime.now(timezone.utc).isoformat()),
+        }
+
     def run_analysis(self, analysis_id: str) -> None:
         analysis = self.repository.get_analysis(analysis_id)
         if not analysis:
@@ -112,20 +181,11 @@ class PipelineService:
 
                 self.repository.update_source_status(source_id, "completed")
                 scraped_payload.append(
-                    {
-                        "analysis_id": analysis_id,
-                        "source_id": source_id,
-                        "name": result.get("name"),
-                        "description": result.get("description"),
-                        "address": result.get("address"),
-                        "price_text": result.get("price_text"),
-                        "price_min": result.get("price_min"),
-                        "price_max": result.get("price_max"),
-                        "rating": result.get("rating"),
-                        "review_count": result.get("review_count"),
-                        "raw_text": result.get("raw_text"),
-                        "metadata": result.get("metadata", {}),
-                    }
+                    self._build_scraped_item_payload(
+                        analysis_id=analysis_id,
+                        source_id=source_id,
+                        result=result,
+                    )
                 )
                 if len(scraped_payload) >= max_items:
                     break
@@ -168,20 +228,11 @@ class PipelineService:
                             result["metadata"]["engine"] = "fallback_parallel"
                         self.repository.update_source_status(source_id, "completed")
                         scraped_payload.append(
-                            {
-                                "analysis_id": analysis_id,
-                                "source_id": source_id,
-                                "name": result.get("name"),
-                                "description": result.get("description"),
-                                "address": result.get("address"),
-                                "price_text": result.get("price_text"),
-                                "price_min": result.get("price_min"),
-                                "price_max": result.get("price_max"),
-                                "rating": result.get("rating"),
-                                "review_count": result.get("review_count"),
-                                "raw_text": result.get("raw_text"),
-                                "metadata": result.get("metadata", {}),
-                            }
+                            self._build_scraped_item_payload(
+                                analysis_id=analysis_id,
+                                source_id=source_id,
+                                result=result,
+                            )
                         )
                         if len(scraped_payload) >= max_items:
                             break
@@ -197,24 +248,10 @@ class PipelineService:
                         continue
                     self.repository.update_source_status(source["id"], "completed")
                     scraped_payload.append(
-                        {
-                            "analysis_id": analysis_id,
-                            "source_id": source["id"],
-                            "name": source.get("title") or source.get("url"),
-                            "description": "Fallback item dari discovery source ketika scraping penuh tidak berhasil.",
-                            "address": None,
-                            "price_text": None,
-                            "price_min": None,
-                            "price_max": None,
-                            "rating": None,
-                            "review_count": None,
-                            "raw_text": source.get("title"),
-                            "metadata": {
-                                "url": source.get("url"),
-                                "engine": "source_discovery_fallback",
-                                "source_type": source.get("source_type"),
-                            },
-                        }
+                        self._build_discovery_fallback_item(
+                            analysis_id=analysis_id,
+                            source=source,
+                        )
                     )
 
             scraped_payload = scraped_payload[:max_items]
@@ -234,22 +271,7 @@ class PipelineService:
                         break
             clean_items = clean_items[:max_items]
             clean_payload = [
-                {
-                    "analysis_id": analysis_id,
-                    "source_id": item.get("source_id"),
-                    "name": item.get("name"),
-                    "description": item.get("description"),
-                    "address": item.get("address"),
-                    "price_text": item.get("price_text"),
-                    "price_min": item.get("price_min"),
-                    "price_max": item.get("price_max"),
-                    "rating": item.get("rating"),
-                    "review_count": item.get("review_count"),
-                    "raw_text": item.get("raw_text"),
-                    "metadata": item.get("metadata", {}),
-                    "created_at": item.get("created_at", datetime.now(timezone.utc).isoformat()),
-                }
-                for item in clean_items
+                self._build_clean_item_payload(analysis_id=analysis_id, item=item) for item in clean_items
             ]
             self.repository.replace_scraped_items(analysis_id, clean_payload)
 

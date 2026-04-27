@@ -1,25 +1,21 @@
 from __future__ import annotations
 
 import json
-import math
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
-
-def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
+from app.utils.data_utils import sanitize_recursive, utc_now_iso
 
 
-def _sanitize(value: Any) -> Any:
-    if isinstance(value, float) and math.isnan(value):
-        return None
-    if isinstance(value, dict):
-        return {key: _sanitize(val) for key, val in value.items()}
-    if isinstance(value, list):
-        return [_sanitize(item) for item in value]
-    return value
+def _empty_store() -> dict[str, list[Any]]:
+    return {
+        "analyses": [],
+        "sources": [],
+        "scraped_items": [],
+        "insights": [],
+        "discovery_profiles": [],
+    }
 
 
 class LocalAnalysisRepository:
@@ -27,15 +23,7 @@ class LocalAnalysisRepository:
         self.store_path = store_path
         self.store_path.parent.mkdir(parents=True, exist_ok=True)
         if not self.store_path.exists():
-            self._save(
-                {
-                    "analyses": [],
-                    "sources": [],
-                    "scraped_items": [],
-                    "insights": [],
-                    "discovery_profiles": [],
-                }
-            )
+            self._save(_empty_store())
 
     def _load(self) -> dict[str, Any]:
         with self.store_path.open("r", encoding="utf-8") as fp:
@@ -45,9 +33,44 @@ class LocalAnalysisRepository:
         with self.store_path.open("w", encoding="utf-8") as fp:
             json.dump(data, fp, ensure_ascii=False, indent=2)
 
+    @staticmethod
+    def _build_source_record(item: dict[str, Any]) -> dict[str, Any]:
+        return sanitize_recursive(
+            {
+                "id": str(uuid4()),
+                "analysis_id": item["analysis_id"],
+                "url": item["url"],
+                "title": item.get("title"),
+                "source_type": item.get("source_type", "web"),
+                "status": item.get("status", "pending"),
+                "created_at": item.get("created_at", utc_now_iso()),
+            }
+        )
+
+    @staticmethod
+    def _build_scraped_item_record(item: dict[str, Any], analysis_id: str | None = None) -> dict[str, Any]:
+        return sanitize_recursive(
+            {
+                "id": str(uuid4()),
+                "analysis_id": analysis_id or item["analysis_id"],
+                "source_id": item.get("source_id"),
+                "name": item.get("name"),
+                "description": item.get("description"),
+                "address": item.get("address"),
+                "price_text": item.get("price_text"),
+                "price_min": item.get("price_min"),
+                "price_max": item.get("price_max"),
+                "rating": item.get("rating"),
+                "review_count": item.get("review_count"),
+                "raw_text": item.get("raw_text"),
+                "metadata": item.get("metadata") or {},
+                "created_at": item.get("created_at", utc_now_iso()),
+            }
+        )
+
     def create_analysis(self, payload: dict[str, Any]) -> dict[str, Any]:
         data = self._load()
-        now = _now_iso()
+        now = utc_now_iso()
         analysis = {
             "id": str(uuid4()),
             "topic": payload.get("topic"),
@@ -89,7 +112,7 @@ class LocalAnalysisRepository:
         for analysis in data["analyses"]:
             if analysis["id"] == analysis_id:
                 analysis["status"] = status
-                analysis["updated_at"] = _now_iso()
+                analysis["updated_at"] = utc_now_iso()
                 break
         self._save(data)
 
@@ -99,16 +122,7 @@ class LocalAnalysisRepository:
         data = self._load()
         created_items: list[dict[str, Any]] = []
         for item in payload:
-            source = {
-                "id": str(uuid4()),
-                "analysis_id": item["analysis_id"],
-                "url": item["url"],
-                "title": item.get("title"),
-                "source_type": item.get("source_type", "web"),
-                "status": item.get("status", "pending"),
-                "created_at": item.get("created_at", _now_iso()),
-            }
-            source = _sanitize(source)
+            source = self._build_source_record(item)
             data["sources"].append(source)
             created_items.append(source)
         self._save(data)
@@ -140,23 +154,7 @@ class LocalAnalysisRepository:
         data = self._load()
         created_items: list[dict[str, Any]] = []
         for item in payload:
-            scraped_item = {
-                "id": str(uuid4()),
-                "analysis_id": item["analysis_id"],
-                "source_id": item.get("source_id"),
-                "name": item.get("name"),
-                "description": item.get("description"),
-                "address": item.get("address"),
-                "price_text": item.get("price_text"),
-                "price_min": item.get("price_min"),
-                "price_max": item.get("price_max"),
-                "rating": item.get("rating"),
-                "review_count": item.get("review_count"),
-                "raw_text": item.get("raw_text"),
-                "metadata": item.get("metadata") or {},
-                "created_at": item.get("created_at", _now_iso()),
-            }
-            scraped_item = _sanitize(scraped_item)
+            scraped_item = self._build_scraped_item_record(item)
             data["scraped_items"].append(scraped_item)
             created_items.append(scraped_item)
         self._save(data)
@@ -171,23 +169,7 @@ class LocalAnalysisRepository:
         data = self._load()
         data["scraped_items"] = [item for item in data["scraped_items"] if item["analysis_id"] != analysis_id]
         for item in items:
-            copied = {
-                "id": str(uuid4()),
-                "analysis_id": analysis_id,
-                "source_id": item.get("source_id"),
-                "name": item.get("name"),
-                "description": item.get("description"),
-                "address": item.get("address"),
-                "price_text": item.get("price_text"),
-                "price_min": item.get("price_min"),
-                "price_max": item.get("price_max"),
-                "rating": item.get("rating"),
-                "review_count": item.get("review_count"),
-                "raw_text": item.get("raw_text"),
-                "metadata": item.get("metadata") or {},
-                "created_at": item.get("created_at", _now_iso()),
-            }
-            copied = _sanitize(copied)
+            copied = self._build_scraped_item_record(item, analysis_id=analysis_id)
             data["scraped_items"].append(copied)
         self._save(data)
 
@@ -206,9 +188,9 @@ class LocalAnalysisRepository:
             "customer_pain_points": payload.get("customer_pain_points", []),
             "strategy_recommendations": payload.get("strategy_recommendations", []),
             "raw_ai_response": payload.get("raw_ai_response", {}),
-            "created_at": _now_iso(),
+            "created_at": utc_now_iso(),
         }
-        insight = _sanitize(insight)
+        insight = sanitize_recursive(insight)
         data["insights"].append(insight)
         self._save(data)
         return insight
