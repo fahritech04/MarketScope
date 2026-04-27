@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-start: #f1f8ff;
+  --bg-end: #ffffff;
+  --ink: #0d1f36;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 5% 10%, #d8ebff 0%, transparent 35%),
+    radial-gradient(circle at 85% 20%, #c9f2e6 0%, transparent 30%),
+    linear-gradient(170deg, var(--bg-start), var(--bg-end));
+  min-height: 100vh;
+}
+
+.glass-panel {
+  @apply border border-white/70 bg-white/80 backdrop-blur-md shadow-soft;
+}
+

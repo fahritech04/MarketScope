@@ -1,0 +1,29 @@
+name: MarketScope Scheduler
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  trigger-scheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger scheduler endpoint
+        env:
+          SCHEDULER_URL: ${{ secrets.MARKETSCOPE_SCHEDULER_URL }}
+          SCHEDULER_TOKEN: ${{ secrets.MARKETSCOPE_SCHEDULER_TOKEN }}
+        run: |
+          if [ -z "$SCHEDULER_URL" ]; then
+            echo "Missing secret MARKETSCOPE_SCHEDULER_URL"
+            exit 1
+          fi
+          if [ -n "$SCHEDULER_TOKEN" ]; then
+            curl -sS -X POST "$SCHEDULER_URL" \
+              -H "Content-Type: application/json" \
+              -H "x-scheduler-token: $SCHEDULER_TOKEN"
+          else
+            curl -sS -X POST "$SCHEDULER_URL" \
+              -H "Content-Type: application/json"
+          fi
+

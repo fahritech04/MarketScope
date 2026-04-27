@@ -1,0 +1,541 @@
+INFO:     127.0.0.1:50723 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53034 - "POST /api/v1/analyses HTTP/1.1" 201 Created
+INFO:     127.0.0.1:53034 - "POST /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3/run HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:53053 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53762 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52481 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53014 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50382 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50397 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50432 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57345 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49510 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49546 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62614 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62653 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63281 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64408 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64443 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62900 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51155 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60065 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60059 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56935 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56950 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56987 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64439 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64475 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64490 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52311 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52326 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56046 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53316 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57292 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58585 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58598 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58625 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58641 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58657 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58678 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52043 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63726 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51764 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54363 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54393 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52087 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52108 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64009 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64023 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52701 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52728 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63712 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63715 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63723 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59697 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60805 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60808 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60829 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60844 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51213 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63091 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63102 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63118 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53004 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53007 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53010 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53021 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49471 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50220 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65152 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65155 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65158 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65161 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65164 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65167 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65170 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49745 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60473 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60476 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60598 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60621 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60661 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60667 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60672 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60675 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60677 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60681 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60685 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60688 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60693 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60699 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60703 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60707 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60711 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60714 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60717 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55019 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55020 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55017 - "GET /api/v1/analyses/86999296-9e76-49bf-a1b9-233efb2acfb3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "OPTIONS /api/v1/analyses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "POST /api/v1/analyses HTTP/1.1" 201 Created
+INFO:     127.0.0.1:50609 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "POST /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/run HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:50609 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63057 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53006 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65182 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64755 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64029 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63057 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50609 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63057 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65182 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53006 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64029 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64755 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57439 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52287 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57439 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58243 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54494 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57439 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52287 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59737 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63267 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59737 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58131 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58131 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63267 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56788 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59737 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60281 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49623 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60281 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59765 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60281 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61070 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59765 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49623 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64224 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53010 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49834 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64120 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64120 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49834 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64224 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53010 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54815 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53506 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54815 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53506 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59970 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53506 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54815 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51015 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65190 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49557 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62745 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65190 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55358 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65190 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49557 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62745 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59780 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61727 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59780 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51739 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59780 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50998 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51739 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61727 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56180 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52227 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50311 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52227 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56180 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63523 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57596 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58972 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62376 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63523 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62376 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58972 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57596 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49295 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51823 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49295 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51589 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51572 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51589 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49295 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51823 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53406 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61752 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59118 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53406 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53406 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59118 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62633 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61752 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65416 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52583 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59325 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51120 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59325 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65416 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51120 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52583 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61767 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54183 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58200 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60606 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54183 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61767 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58200 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60606 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63645 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49570 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63645 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56009 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51335 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63645 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56009 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49570 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58694 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58694 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54619 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58694 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52292 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54619 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58375 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59510 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61738 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59510 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58375 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61738 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51591 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56273 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51591 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57393 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49466 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55955 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57393 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56273 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63759 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56449 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58630 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64311 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58630 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63759 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56449 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64311 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61533 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63239 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51548 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61533 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51548 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61533 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56997 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63239 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55732 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60278 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60796 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50800 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60796 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55732 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50800 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60278 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63270 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54449 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63270 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56017 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55367 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56017 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63270 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54449 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57679 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57679 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57679 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52112 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65429 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56391 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60725 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59369 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52689 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60725 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60786 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52689 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60725 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59369 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56872 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51057 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59959 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50172 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51057 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50172 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59959 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56872 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57174 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57174 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65015 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52041 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65015 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57174 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52041 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51967 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57470 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63918 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53560 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56944 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57470 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56944 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53560 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63918 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64105 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63714 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58328 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55317 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58328 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55317 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63714 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58632 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49688 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51648 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50340 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52086 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50340 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49688 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51648 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52086 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59873 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63046 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62861 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63962 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59873 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62861 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63962 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63046 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64982 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64044 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64756 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58865 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64044 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64982 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58865 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64756 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60047 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51294 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51294 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60047 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62060 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51294 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56357 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60047 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58345 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58345 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57385 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50948 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58345 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50948 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57385 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57984 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54260 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60452 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58143 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58143 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54260 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60452 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62069 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63098 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62069 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55163 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50846 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62069 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55163 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63098 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62039 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62646 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62039 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62840 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55621 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62039 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62840 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62646 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62646 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62840 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62840 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62646 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55621 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65424 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55436 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55621 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62840 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62646 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65424 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55621 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62039 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54075 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62646 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62840 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62865 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65173 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61065 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62865 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62865 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61065 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65415 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:65173 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60347 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62409 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60347 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64075 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64075 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60347 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56521 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62409 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54678 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58571 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57057 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55297 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57057 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58571 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55297 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54678 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60626 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62942 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55711 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58594 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60626 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57578 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57451 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60616 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53244 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57578 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60616 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53244 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57451 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57245 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55254 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57245 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60873 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60873 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57245 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61627 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55254 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61116 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61822 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51906 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50921 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61822 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61116 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50921 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51906 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64578 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65219 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53297 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65219 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60912 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64578 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62612 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64914 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56192 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54982 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54982 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62612 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64914 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56192 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63310 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50478 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50291 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63310 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63292 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50291 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50478 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56601 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55261 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59355 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56601 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59355 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55261 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58278 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56131 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63611 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58278 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58278 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56131 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56631 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63611 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51329 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52580 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50133 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63154 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50133 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63154 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52580 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51329 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64702 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63721 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50156 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64702 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63721 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49222 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50156 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57138 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62374 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65504 - "OPTIONS /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53443 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/sources HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57138 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/insights HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62374 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65504 - "GET /api/v1/analyses/0fe2c49b-01a8-4fc1-b0ef-06419577087e/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50290 - "OPTIONS /api/v1/analyses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55983 - "OPTIONS /api/v1/analyses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55983 - "GET /api/v1/analyses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50290 - "GET /api/v1/analyses HTTP/1.1" 200 OK
