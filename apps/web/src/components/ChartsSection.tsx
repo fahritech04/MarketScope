@@ -35,8 +35,8 @@ export function ChartsSection({ sources, items }: ChartsSectionProps) {
 
   return (
     <section className="grid gap-4 lg:grid-cols-3">
-      <article className="glass-panel rounded-2xl p-4">
-        <h3 className="mb-3 font-semibold text-slate-900">Jumlah Sumber</h3>
+      <article className="surface-card p-4">
+        <h3 className="mb-3 text-sm font-semibold text-slate-900">Jumlah Sumber</h3>
         <div className="h-56">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
@@ -51,31 +51,31 @@ export function ChartsSection({ sources, items }: ChartsSectionProps) {
         </div>
       </article>
 
-      <article className="glass-panel rounded-2xl p-4">
-        <h3 className="mb-3 font-semibold text-slate-900">Distribusi Rating</h3>
+      <article className="surface-card p-4">
+        <h3 className="mb-3 text-sm font-semibold text-slate-900">Distribusi Rating</h3>
         <div className="h-56">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={ratingBins}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e7e7f1" />
               <XAxis dataKey="name" fontSize={12} />
               <YAxis allowDecimals={false} />
               <Tooltip />
-              <Bar dataKey="value" fill="#1572f5" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="value" fill="#6759f4" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
       </article>
 
-      <article className="glass-panel rounded-2xl p-4">
-        <h3 className="mb-3 font-semibold text-slate-900">Distribusi Harga</h3>
+      <article className="surface-card p-4">
+        <h3 className="mb-3 text-sm font-semibold text-slate-900">Distribusi Harga</h3>
         <div className="h-56">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={priceBins}>
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#e7e7f1" />
               <XAxis dataKey="name" fontSize={12} />
               <YAxis allowDecimals={false} />
               <Tooltip />
-              <Bar dataKey="value" fill="#00a86b" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="value" fill="#4fc89f" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -83,4 +83,3 @@ export function ChartsSection({ sources, items }: ChartsSectionProps) {
     </section>
   );
 }
-

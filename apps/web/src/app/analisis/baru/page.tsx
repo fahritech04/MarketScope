@@ -39,15 +39,16 @@ export default function NewAnalysisPage() {
   };
 
   return (
-    <main className="mx-auto max-w-3xl space-y-6">
-      <section className="glass-panel rounded-2xl p-6">
-        <h1 className="font-[var(--font-heading)] text-2xl font-semibold text-slate-900">Buat Analisis Baru</h1>
-        <p className="mt-2 text-sm text-slate-600">
+    <main className="space-y-4">
+      <section className="surface-card p-6">
+        <p className="chip inline-flex">Create Workspace</p>
+        <h1 className="section-title mt-3 text-3xl sm:text-4xl">Buat Analisis Baru</h1>
+        <p className="mt-2 text-sm text-muted">
           Masukkan topik bisnis yang ingin dianalisis. Sistem akan langsung menjalankan discovery, scraping, cleaning, dan AI insight.
         </p>
       </section>
 
-      <form onSubmit={handleSubmit} className="glass-panel space-y-5 rounded-2xl p-6">
+      <form onSubmit={handleSubmit} className="surface-card space-y-5 p-6">
         <div className="space-y-2">
           <label htmlFor="topic" className="text-sm font-semibold text-slate-700">
             Topik Analisis
@@ -57,7 +58,7 @@ export default function NewAnalysisPage() {
             value={topic}
             onChange={(event) => setTopic(event.target.value)}
             placeholder="Masukkan topik analisis apa pun"
-            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-brand-300 transition focus:ring-2"
+            className="w-full rounded-xl border border-[#e8e8f3] bg-[#fbfbff] px-4 py-3 text-sm outline-none ring-violet-300 transition focus:ring-2"
           />
         </div>
 
@@ -71,7 +72,7 @@ export default function NewAnalysisPage() {
               value={location}
               onChange={(event) => setLocation(event.target.value)}
               placeholder="Masukkan area/lokasi (opsional)"
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-brand-300 transition focus:ring-2"
+              className="w-full rounded-xl border border-[#e8e8f3] bg-[#fbfbff] px-4 py-3 text-sm outline-none ring-violet-300 transition focus:ring-2"
             />
           </div>
           <div className="space-y-2">
@@ -83,7 +84,7 @@ export default function NewAnalysisPage() {
               value={category}
               onChange={(event) => setCategory(event.target.value)}
               placeholder="Masukkan kategori (opsional)"
-              className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none ring-brand-300 transition focus:ring-2"
+              className="w-full rounded-xl border border-[#e8e8f3] bg-[#fbfbff] px-4 py-3 text-sm outline-none ring-violet-300 transition focus:ring-2"
             />
           </div>
         </div>
@@ -93,7 +94,7 @@ export default function NewAnalysisPage() {
         <button
           disabled={loading}
           type="submit"
-          className="w-full rounded-xl bg-brand-600 px-4 py-3 text-sm font-semibold text-white hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
+          className="w-full rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {loading ? "Memproses..." : "Mulai Analisis"}
         </button>
